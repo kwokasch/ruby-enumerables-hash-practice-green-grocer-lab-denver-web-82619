@@ -69,9 +69,15 @@ end
 
 
 def checkout(cart, coupons)
-  total = 0 
-  hash_cart = consolidate_cart(cart)
+  total = 0     #=> start with value of zero
+  hash_cart = consolidate_cart(cart)  
+  
+  #=> create variable for cart once consolidate_cart method has been applied 
+  
   coupon_cart = apply_coupons(hash_cart, coupons)
+  
+  #=> create variable for cart once apply_coupons method has been applied
+  
   clearance_cart = apply_clearance(coupon_cart)
   
   clearance_cart.each do |item, values|
