@@ -61,10 +61,10 @@ def apply_clearance(cart)
       
       price_hash[:price] = (price_hash[:price] * 0.8).round(2)
       
-      #=> 
+      #=> revise price to equal 80% of original price (20% discount) and round to 2 decimal places
     end
   end
-  cart
+  cart    #=> return cart (now updated with clearance)
 end
 
 
