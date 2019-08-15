@@ -80,12 +80,18 @@ def checkout(cart, coupons)
   
   clearance_cart = apply_clearance(coupon_cart)
   
+  #=> create variable for cart once apply_clearance method has been applied
+  
   clearance_cart.each do |item, values|
     total += values[:price] * values[:count]
+    
+    #=> for each item in fully updated cart (clearance_cart) generate a running total (+=) cost by multiplying the price of the item by the number of items 
   end
   
   if total > 100
     total = total * 0.9
+    
+    #=> if the total cost exceeds $100, apply discount of 10% 
   end
-  total
+  total   #=> return total (with all discounts applied)
 end
